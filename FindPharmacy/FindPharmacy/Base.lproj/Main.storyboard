@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d5O-4W-bmX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="gKX-Yg-CE5">
+            <objects>
+                <navigationController id="d5O-4W-bmX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zfL-nG-Rh7">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U3M-zm-bk8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOf-IC-Qww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="37"/>
+        </scene>
+        <!--City List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CityListViewController" customModule="FindPharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6X-NO-9Iq">
+                                <rect key="frame" x="148.66666666666666" y="121" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ooX-ib-SYF">
+                                <rect key="frame" x="0.0" y="150.33333333333331" width="393" height="667.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCell" id="Olr-JC-Se9" customClass="CityListTableViewCell" customModule="FindPharmacy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Olr-JC-Se9" id="WBa-cq-X5A">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNF-Y0-H2L">
+                                                    <rect key="frame" x="172.66666666666666" y="11.333333333333336" width="48" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iNF-Y0-H2L" firstAttribute="centerY" secondItem="WBa-cq-X5A" secondAttribute="centerY" id="Bzn-pz-Js7"/>
+                                                <constraint firstItem="iNF-Y0-H2L" firstAttribute="centerX" secondItem="WBa-cq-X5A" secondAttribute="centerX" id="Ymo-MQ-fbO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityNameLabel" destination="iNF-Y0-H2L" id="Cg2-eQ-83v"/>
+                                            <segue destination="QvG-Iz-Sju" kind="show" id="fUg-CY-ILO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cC9-uB-w6n"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hcI-Vg-xh9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="F6X-NO-9Iq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DT3-aN-veo"/>
+                            <constraint firstItem="ooX-ib-SYF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L1C-Ee-rnB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ooX-ib-SYF" secondAttribute="trailing" id="ajU-gl-djd"/>
+                            <constraint firstItem="ooX-ib-SYF" firstAttribute="firstBaseline" secondItem="F6X-NO-9Iq" secondAttribute="baseline" constant="12.333333333333334" symbolType="layoutAnchor" id="n1H-bH-cfv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ooX-ib-SYF" secondAttribute="bottom" id="o7y-pL-MwT"/>
+                            <constraint firstItem="F6X-NO-9Iq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="w3x-9K-JO5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="f3M-WT-blB"/>
+                    <connections>
+                        <outlet property="cityListTableView" destination="ooX-ib-SYF" id="Kjx-LK-kyy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="37"/>
+        </scene>
+        <!--Region List View Controller-->
+        <scene sceneID="Ohn-T5-u0d">
+            <objects>
+                <viewController id="QvG-Iz-Sju" customClass="RegionListViewController" customModule="FindPharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tu3-xZ-eKl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f82-PP-JEq">
+                                <rect key="frame" x="137.66666666666666" y="120.99999999999999" width="118" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zqa-1t-eQb">
+                                <rect key="frame" x="0.0" y="149.66666666666669" width="393" height="668.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iuS-BP-ieV">
+                                    <size key="itemSize" width="364" height="104"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RegionCell" id="016-1c-VPV" customClass="RegionListCollectionViewCell" customModule="FindPharmacy" customModuleProvider="target">
+                                        <rect key="frame" x="14.666666666666666" y="0.0" width="364" height="104"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CFO-fK-b9p">
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ceyhan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHh-XM-Smp">
+                                                    <rect key="frame" x="19.999999999999996" y="20" width="57.666666666666657" height="64"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHh-XM-Smp" secondAttribute="trailing" constant="20" symbolic="YES" id="Jj9-ZN-uyv"/>
+                                                <constraint firstItem="qHh-XM-Smp" firstAttribute="top" secondItem="CFO-fK-b9p" secondAttribute="top" constant="20" symbolic="YES" id="N8o-Dt-om5"/>
+                                                <constraint firstItem="qHh-XM-Smp" firstAttribute="leading" secondItem="CFO-fK-b9p" secondAttribute="leading" constant="20" symbolic="YES" id="STS-CC-kxa"/>
+                                                <constraint firstAttribute="bottom" secondItem="qHh-XM-Smp" secondAttribute="bottom" constant="20" symbolic="YES" id="dLu-yF-Rsf"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="364" height="104"/>
+                                        <connections>
+                                            <outlet property="regionNameLabel" destination="qHh-XM-Smp" id="17k-Zd-BUr"/>
+                                            <segue destination="FLw-kS-ME5" kind="show" id="dLJ-RG-zM6"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="QvG-Iz-Sju" id="zxy-7G-hdu"/>
+                                    <outlet property="delegate" destination="QvG-Iz-Sju" id="sUy-t8-sDm"/>
+                                </connections>
+                            </collectionView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c2Z-2s-W3D">
+                                <rect key="frame" x="-142" y="267" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vXi-Mh-Ygj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zqa-1t-eQb" firstAttribute="leading" secondItem="vXi-Mh-Ygj" secondAttribute="leading" id="0ZZ-lW-8wi"/>
+                            <constraint firstItem="zqa-1t-eQb" firstAttribute="firstBaseline" secondItem="f82-PP-JEq" secondAttribute="baseline" constant="12.333333333333334" symbolType="layoutAnchor" id="GIy-Mx-5Pz"/>
+                            <constraint firstItem="vXi-Mh-Ygj" firstAttribute="bottom" secondItem="zqa-1t-eQb" secondAttribute="bottom" id="H4l-v9-4rm"/>
+                            <constraint firstItem="f82-PP-JEq" firstAttribute="top" secondItem="vXi-Mh-Ygj" secondAttribute="top" constant="18" id="PbL-L9-D2U"/>
+                            <constraint firstItem="f82-PP-JEq" firstAttribute="centerX" secondItem="vXi-Mh-Ygj" secondAttribute="centerX" id="bCi-oC-528"/>
+                            <constraint firstItem="vXi-Mh-Ygj" firstAttribute="trailing" secondItem="zqa-1t-eQb" secondAttribute="trailing" id="obo-tK-7oc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" customizationIdentifier="" id="biC-6C-QOv"/>
+                    <connections>
+                        <outlet property="regionListCollectionView" destination="zqa-1t-eQb" id="wnN-2O-uI5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="667-hf-ByC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="32"/>
+        </scene>
+        <!--Pharmacy List View Controller-->
+        <scene sceneID="Mfa-eO-Aaq">
+            <objects>
+                <viewController id="FLw-kS-ME5" customClass="PharmacyListViewController" customModule="FindPharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G3Y-cX-GeY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Pharmacy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBS-gR-0Ld">
+                                <rect key="frame" x="132" y="121" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BlA-iB-Obl">
+                                <rect key="frame" x="0.0" y="150.33333333333331" width="393" height="667.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PharmacyCell" id="iLU-MQ-f16" customClass="PharmacyListTableViewCell" customModule="FindPharmacy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iLU-MQ-f16" id="29U-JW-OCy">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eczane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlH-bQ-Rpc">
+                                                    <rect key="frame" x="168.66666666666666" y="11.333333333333336" width="56" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MlH-bQ-Rpc" firstAttribute="centerX" secondItem="29U-JW-OCy" secondAttribute="centerX" id="1da-Jb-621"/>
+                                                <constraint firstItem="MlH-bQ-Rpc" firstAttribute="centerY" secondItem="29U-JW-OCy" secondAttribute="centerY" id="Gr4-UE-asj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pharmacyNameLabel" destination="MlH-bQ-Rpc" id="ByB-co-Z4L"/>
+                                            <segue destination="8PD-m5-bfe" kind="show" id="LAd-8c-MIQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FLw-kS-ME5" id="JmB-TJ-U21"/>
+                                    <outlet property="delegate" destination="FLw-kS-ME5" id="1ra-IL-qma"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ltS-kb-LBi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MBS-gR-0Ld" firstAttribute="centerX" secondItem="ltS-kb-LBi" secondAttribute="centerX" id="6zm-zV-gyZ"/>
+                            <constraint firstItem="ltS-kb-LBi" firstAttribute="trailing" secondItem="BlA-iB-Obl" secondAttribute="trailing" id="DNe-51-Wii"/>
+                            <constraint firstItem="BlA-iB-Obl" firstAttribute="firstBaseline" secondItem="MBS-gR-0Ld" secondAttribute="baseline" constant="12.333333333333334" symbolType="layoutAnchor" id="H15-TT-Md0"/>
+                            <constraint firstItem="BlA-iB-Obl" firstAttribute="leading" secondItem="ltS-kb-LBi" secondAttribute="leading" id="LcK-65-wPF"/>
+                            <constraint firstItem="ltS-kb-LBi" firstAttribute="bottom" secondItem="BlA-iB-Obl" secondAttribute="bottom" id="Orf-UB-TYY"/>
+                            <constraint firstItem="MBS-gR-0Ld" firstAttribute="top" secondItem="ltS-kb-LBi" secondAttribute="top" constant="18" id="aZB-CN-s3a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aSd-bF-4Zb"/>
+                    <connections>
+                        <outlet property="pharmacyListTableView" destination="BlA-iB-Obl" id="Cme-R4-IIX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2x-G8-N3q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333.5877862595419" y="36.619718309859159"/>
+        </scene>
+        <!--Pharmacy Detail View Controller-->
+        <scene sceneID="7GF-8x-pGF">
+            <objects>
+                <viewController id="8PD-m5-bfe" customClass="PharmacyDetailViewController" customModule="FindPharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iR5-ze-Mcc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pharmacy Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ms-RK-bXu">
+                                <rect key="frame" x="130" y="121" width="133" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-Ss-K8W">
+                                <rect key="frame" x="174" y="145.66666666666666" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-Gm-aa6">
+                                <rect key="frame" x="172" y="170.33333333333334" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FFg-tO-uHK">
+                                <rect key="frame" x="16" y="207.33333333333331" width="361" height="586.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b2w-bE-Qwv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FFg-tO-uHK" firstAttribute="leading" secondItem="iR5-ze-Mcc" secondAttribute="leadingMargin" id="1hl-gV-B3b"/>
+                            <constraint firstItem="WJJ-Gm-aa6" firstAttribute="firstBaseline" secondItem="d4o-Ss-K8W" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="FAA-Zz-2tb"/>
+                            <constraint firstItem="b2w-bE-Qwv" firstAttribute="bottom" secondItem="FFg-tO-uHK" secondAttribute="bottom" constant="24" id="Twt-Bo-PvZ"/>
+                            <constraint firstItem="d4o-Ss-K8W" firstAttribute="centerX" secondItem="b2w-bE-Qwv" secondAttribute="centerX" id="Yff-v6-c2D"/>
+                            <constraint firstItem="d4o-Ss-K8W" firstAttribute="firstBaseline" secondItem="2Ms-RK-bXu" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ZTh-tx-DU0"/>
+                            <constraint firstItem="FFg-tO-uHK" firstAttribute="firstBaseline" secondItem="WJJ-Gm-aa6" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="ezg-Zz-agF"/>
+                            <constraint firstItem="2Ms-RK-bXu" firstAttribute="top" secondItem="b2w-bE-Qwv" secondAttribute="top" constant="18" id="gSW-8r-gVV"/>
+                            <constraint firstItem="WJJ-Gm-aa6" firstAttribute="centerX" secondItem="b2w-bE-Qwv" secondAttribute="centerX" id="gxh-6X-cS8"/>
+                            <constraint firstItem="2Ms-RK-bXu" firstAttribute="centerX" secondItem="b2w-bE-Qwv" secondAttribute="centerX" id="mHr-bP-mnb"/>
+                            <constraint firstItem="FFg-tO-uHK" firstAttribute="centerX" secondItem="b2w-bE-Qwv" secondAttribute="centerX" id="uly-K8-Dnh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mo3-bZ-zCC"/>
+                    <connections>
+                        <outlet property="pharmacyDetailAddressText" destination="FFg-tO-uHK" id="oTQ-nq-BBY"/>
+                        <outlet property="pharmacyDetailNameLabel" destination="d4o-Ss-K8W" id="fyJ-d1-q0h"/>
+                        <outlet property="pharmacyDetailPhoneLabel" destination="WJJ-Gm-aa6" id="Xti-aO-cWP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nC8-lf-A53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2096.9465648854962" y="43.661971830985919"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
